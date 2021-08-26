@@ -98,7 +98,8 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo img {
   padding: 0;
   margin: 0;
-  max-height: 40px;
+  max-height: 72px;
+  margin-top: -22px;
 }
 
 @media (max-width: 768px) {
