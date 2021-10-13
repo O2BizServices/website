@@ -230,7 +230,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-left">
-            <form action="https://jxgt6dlxal.execute-api.ap-southeast-2.amazonaws.com/dev/o2b/sendEmail" method="post" role="form" class="php-email-form">
+            <form action="https://jxgt6dlxal.execute-api.ap-southeast-2.amazonaws.com/dev/o2b/sendEmail" id="myform" method="post" role="form" class="php-email-form">
 
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -259,7 +259,9 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center">
+			  <input type="button" class="btn btn-primary" id="sendMsg" value="Send Message" />
+			  </div>
             </form>
           </div>
 

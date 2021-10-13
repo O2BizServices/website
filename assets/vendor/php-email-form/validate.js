@@ -2,9 +2,9 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.php-email-form').submit(function() {
+  $('#sendMsg').on('click', function(){
    
-    var f = $(this).find('.form-group'),
+    var f = $("#myform").find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
     });
     f.children('textarea').each(function() { // run all inputs
 
-      var i = $(this); // current input
+      var i = $("#myform"); // current input
       var rule = i.attr('data-rule');
 
       if (rule !== undefined) {
@@ -89,11 +89,20 @@ jQuery(document).ready(function($) {
         i.next('.validate').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
+	
+	var indexed_array = {};
     if (ferror) return false;
-    else var str = $(this).serialize();
+    else {
+		
+		
 
-    var this_form = $(this);
-    var action = $(this).attr('action');
+    $.map($("#myform").serializeArray(), function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+	}
+    var this_form = $("#myform");
+    var action = $("#myform").attr('action');
 
     if( ! action ) {
       this_form.find('.loading').slideUp();
@@ -104,20 +113,21 @@ jQuery(document).ready(function($) {
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
-    
+    $("#sendMsg").hide();
     $.ajax({
       type: "POST",
       url: action,
-      data: str,
+      data: JSON.stringify(indexed_array),
       success: function(msg) {
         if (msg == 'Sucess') {
           this_form.find('.loading').slideUp();
-          this_form.find('.sent-message').slideDown();
-          this_form.find("input:not(input[type=submit]), textarea").val('');
-        } else {
+          this_form.find('.sent-message').slideDown();          
           this_form.find('.loading').slideUp();
-          this_form.find('.error-message').slideDown().html(msg);
-        }
+		  $("input").val("");
+		  $("textarea").val("");
+        }else{
+			$("#sendMsg").show();
+		}
       }
     });
     return false;
