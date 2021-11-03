@@ -36,8 +36,9 @@ jQuery(document).ready(function($) {
             }
             break;
 
-          case 'email':
-            if (!emailExp.test(i.val())) {
+          case 'validate-email':
+            var isRequired = i.attr('data-required');
+            if ((!isRequired || i.val().trim().length > 0) && !emailExp.test(i.val())) {
               ferror = ierror = true;
             }
             break;
@@ -60,9 +61,9 @@ jQuery(document).ready(function($) {
     });
     f.children('textarea').each(function() { // run all inputs
 
-      var i = $("#myform"); // current input
+      //var i = $("#myform"); // current input
+      var i = $(this); // current input
       var rule = i.attr('data-rule');
-
       if (rule !== undefined) {
         var ierror = false; // error flag for current input
         var pos = rule.indexOf(':', 0);
