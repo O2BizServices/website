@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Stone Crusher :: Manage Users</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <!-- Datatable -->
+    <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <link href="../vendor/chartist/css/chartist.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+      <div id="main-wrapper">
+		<div id="leftMenu"></div>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Manage Roles</h4>                            
+                        </div>
+                    </div>                    
+                </div> 
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">                                                       
+                            <div class="card-body">      
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-dark" onclick="openAdd()"><i class="fa fa-plus-square"></i> Add</button>
+                                </div>                           
+                                <div class="clearfix">&nbsp;</div>
+                                <div id="errorDiv"></div>
+                                <div class="clearfix">&nbsp;</div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="thead-primary">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Role Code</th>
+                                                <th>Description</th>
+                                               
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="idRoleTableBody"></tbody>
+                                    </table>
+                                
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal fade" id="showModalDialog" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Roles Mapping</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="basic-form">
+                                        <form name="userDetailsForm" id="userDetailsForm" method="post">    
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label" for="txtMobile">Role Name <span class="required">(*)</span></label>
+                                                    <input type="text" id="txtRoleName" name="txtRoleName" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="txtEmail" class="form-label">Role Description</label>
+                                                    <input type="text" id="txtDesc" name="txtDesc" class="form-control">
+													 <input type="hidden" id="txtid">
+                                                </div>
+											</div>
+											<div class="row" id="screenDetails"></div>                                                                                    
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                <button type="button" id="btnRolesSubmit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+		<div id="myfooter"></div>
+    </div>
+    <script src="../vendor/global/global.min.js"></script>
+	<script src="../js/commonhtml.js"></script>
+    <script src="../js/quixnav-init.js"></script>
+    <script src="../js/custom.min.js"></script>
+	<script src="../vendor/chartist/js/chartist.min.js"></script>
+	<script src="../vendor/moment/moment.min.js"></script>
+    <script src="../vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+	<script src="../js/dashboard/dashboard-2.js"></script>
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../js/plugins-init/datatables.init.js"></script>
+	<script src="../js/common.js"></script>
+    <script src="../js/manage-users.js"></script>
+	<script src="../js/optiontransfer.js"></script>
+
+<script>
+loadAllScreen();
+
+</script>
+</body>
+
+</html>
