@@ -12,7 +12,7 @@ const DEV = 'DEV';
 const QA = 'QA';
 const PROD = 'PROD';
 
-const activeProfile = DEV;
+const activeProfile = eval(localStorage.getItem("shreeEnv"));
 
 /**
  * This method use to get aws server url base on active profile.

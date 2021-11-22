@@ -21,7 +21,7 @@ $("#leftMenu").html('<div class="nav-header">'+
                         '<i class="icon icon-app-store"></i><span class="nav-text">Access Management</span></a>'+
                         '<ul aria-expanded="false">'+
 							checkAccess('User/Role Access')
-                        +'</ul>'+
+                        +'<li><a href="#" onclick="logout()">LogOut</a></li></ul>'+
                     '</li>'+                    
                 '</ul>'+
             '</div>'+
@@ -42,3 +42,9 @@ function checkAccess(code){
 	}
 	return str;
 }	
+function logout(){
+	localStorage.removeItem("token");
+	localStorage.removeItem("access");
+	localStorage.removeItem("shreeEnv");
+	location.href="../index.html";	
+}
