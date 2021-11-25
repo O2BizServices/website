@@ -9,7 +9,7 @@ $("#leftMenu").html('<div class="nav-header">'+
             '<div class="header-content">'+
                 '<nav class="navbar navbar-expand">'+
                     '<div class="collapse navbar-collapse justify-content-between">'+
-                        '<div class="header-left">&nbsp;</div>'+                       
+                        '<div style="width: 100%;text-align: right;">Welcome '+getUserDetails()+'</div>'+                       
                     '</div>'+
                 '</nav>'+
             '</div>'+
@@ -46,6 +46,11 @@ function logout(){
 	localStorage.removeItem("token");
 	localStorage.removeItem("access");
 	location.href="../login.html";	
+}
+function getUserDetails(){
+	var users = JSON.parse(localStorage.getItem("users"));
+	return users.username;
+	
 }
 
 $(function(){

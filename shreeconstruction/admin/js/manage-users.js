@@ -476,6 +476,7 @@ $('#btnsignin').click(function (event) {
 					}else{
 						localStorage.setItem("token",response.responseJSON.additionalDetails[0]);
 						localStorage.setItem("access",JSON.stringify(response.responseJSON.details.AdminPortal));
+						localStorage.setItem("users",JSON.stringify(response.responseJSON.users));
 						location.href="views/index.html"					
 					}
 				} else {
