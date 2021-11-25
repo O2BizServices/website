@@ -17,7 +17,7 @@ $("#leftMenu").html('<div class="nav-header">'+
         '<div class="quixnav">'+
             '<div class="quixnav-scroll">'+
                 '<ul class="metismenu" id="menu">'+
-                    '<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">'+
+                    '<li><a id="accessMgmt" class="has-arrow" href="javascript:void()" aria-expanded="false">'+
                         '<i class="icon icon-app-store"></i><span class="nav-text">Access Management</span></a>'+
                         '<ul aria-expanded="false">'+
 							checkAccess('User/Role Access')
@@ -45,6 +45,11 @@ function checkAccess(code){
 function logout(){
 	localStorage.removeItem("token");
 	localStorage.removeItem("access");
-	localStorage.removeItem("shreeEnv");
-	location.href="../index.html";	
+	location.href="../login.html";	
 }
+
+$(function(){
+	$(".mm-collapse").addClass('mm-show');
+	$('#accessMgmt').attr('aria-expanded',true);
+	$('.metismenu').find('li').eq(0).addClass('mm-active');
+});

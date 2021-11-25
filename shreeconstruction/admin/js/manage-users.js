@@ -79,10 +79,41 @@ function prepareRoleList(response){
 		str += '<td>';
         str += '<button type="button" class="btn btn-primary" title="Update" alt="Update" data-id="' + $(obj).attr('id') + '" onClick="editRole(this)"><i class="fa fa-edit"></i></button>';
         str += '&nbsp;&nbsp;';
+		str += '<button type="button" class="btn btn-primary" title="Update" alt="Update" data-id="' + $(obj).attr('id') + '" onClick="viewRoleUser(this)"><i class="fa fa-users"></i></button>';
+        str += '&nbsp;&nbsp;';
         str += '<button type="button" class="btn btn-danger" title="Remove" alt="Remove" data-id="' + $(obj).attr('id') + '" onClick="deleteRole(this)"><i class="fa fa-trash"></i></button>';
         str += '</td></tr>';		
 		$("#idRoleTableBody").append(str);		
 	});
+}
+
+function viewRoleUser(obj){
+	var map = {};
+		map["roleid"]=$(obj).attr("data-id");
+		$.ajax({
+				url: SERVER_URL + 'admin/web/role/rolewiseuser',
+				type: 'post',
+				headers: {
+                'token': localStorage.getItem("token"),
+				},
+				data:JSON.stringify(map),
+				complete: function (response) {
+				if (response.status == 200) {
+					$('#showModalRoleDialog').modal('show');
+						var str="";
+							$(response.responseJSON).each(function(key,val){
+								str = str + (++key) +". " +val+"<br>" ;
+							});
+							if(str == ""){
+								str="<h2>This role is not assign to any user.</h2>";
+							}
+							$("#rolewiseuserlist").html(str);
+						
+				} else {
+					errorRequest(response.status);
+				}
+			}
+		});	
 }
 
 function deleteRole(obj){
@@ -252,11 +283,11 @@ function prepareUserTableBody(users) {
         tableBody += '<td>';
         tableBody += (count++);
         tableBody += '</td>';
-        tableBody += '<td class="mobileClass">';
-        tableBody += user.mobile;
-        tableBody += '</td>';
 		tableBody += '<td>';
         tableBody += user.username;
+        tableBody += '</td>';
+		tableBody += '<td class="mobileClass">';
+        tableBody += user.mobile;
         tableBody += '</td>';
         tableBody += '<td>';
         tableBody += user.email == null ? "" : user.email;
@@ -303,8 +334,8 @@ function getRoleName(id){
 }
 
 $('#btnUFSubmit').click(function (event) {
-	if($("#txtMobile").val() == ""){
-		alert("Please Enter Mobile name");
+	if($("#txtMobile").val().length != 10){
+		alert("Please Enter valid Mobile Number");
 		return false;
 	}
 	if($("#txtusername").val() == ""){
@@ -315,10 +346,18 @@ $('#btnUFSubmit').click(function (event) {
 		alert("Please Enter Password");
 		return false;
 	}
+	if($("#txtEmail").val() != ""){
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		if( !emailReg.test( $("#txtEmail").val() ) ) {
+			alert("Please enter valid email id");
+			return false;
+		} 
+	}
 	if($("#assignRoles").find("option").length == 0){
 		alert("Please add some roles to user");
 		return false;
 	}
+	
 	
 	var map = {};
 	var suffixurl="";	
@@ -449,4 +488,14 @@ $('#btnsignin').click(function (event) {
 function errorRequest(sta){
 	location.href="../index.html";
 }
-
+function showPass(){
+	if($("#txtid").val() == ""){
+		if($("#txtPassword").attr("type") == 'text'){	
+			$("#txtPassword").attr("type","password");
+			$("#eyePass").attr("class","fa fa-eye-slash");
+		}else{
+			$("#txtPassword").attr("type","text");
+			$("#eyePass").attr("class","fa fa-eye");		
+		}
+	}
+}
