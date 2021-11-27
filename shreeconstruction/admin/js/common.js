@@ -1,6 +1,6 @@
 
 const DEV_URL = 'https://un137lb64l.execute-api.ap-southeast-1.amazonaws.com/dev/api/v1/SHR/';
-const QA_URL = 'https://bsbo3e9u5a.execute-api.ap-south-1.amazonaws.com/qa/api/v1/SHR/';
+const QA_URL = 'https://nchbzfmmu5.execute-api.ap-south-1.amazonaws.com/qa/api/v1/SHR/';
 const PROD_URL = 'https://t21urj33n9.execute-api.ap-south-1.amazonaws.com/prod/api/v1/SHR/';
 
 const DESKTOP = "DESKTOP";
@@ -12,7 +12,7 @@ const DEV = 'DEV';
 const QA = 'QA';
 const PROD = 'PROD';
 
-const activeProfile = eval(localStorage.getItem("shreeEnv"));
+const activeProfile = PROD;
 
 /**
  * This method use to get aws server url base on active profile.
