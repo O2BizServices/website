@@ -21,24 +21,24 @@ function removeAllRoles(){
 }
 
 
-function addScreen(){
-	if($('#allScreen option:selected').length == 0){
-		alert("Please select Some Screen");
+function addUsers(){
+	if($('#allUsers option:selected').length == 0){
+		alert("Please select Some Users");
 		return false
 	}
-	$('#allScreen option:selected').detach().appendTo('#assignScreen');
+	$('#allUsers option:selected').detach().appendTo('#assignManager');
 }
-function addAllScreen(){
-	$('#allScreen option').detach().appendTo('#assignScreen');
+function addAllUsers(){
+	$('#allUsers option').detach().appendTo('#assignManager');
 }
-function removeScreen(){
-	if($('#assignScreen option:selected').length == 0){
-		alert("Please select Some Screen");
+function removeUsers(){
+	if($('#assignManager option:selected').length == 0){
+		alert("Please select Some Users");
 		return false
 	}
-	$('#assignScreen option:selected').detach().appendTo('#allScreen');
+	$('#assignManager option:selected').detach().appendTo('#allUsers');
 }
 
-function removeAllScreen(){
-	$('#assignScreen option').detach().appendTo('#allScreen');
+function removeAllUsers(){
+	$('#assignManager option').detach().appendTo('#allUsers');
 }
