@@ -11,8 +11,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
     <!-- Datatable -->
     <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="../vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
-    <link href="../vendor/chartist/css/chartist.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
 </head>
@@ -51,7 +49,7 @@
                                 <div id="errorDiv"></div>
                                 <div class="clearfix">&nbsp;</div>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="datatableid">
                                         <thead class="thead-primary">
                                             <tr>
                                                 <th>ID</th>                                               
@@ -109,8 +107,7 @@
                                                     <input type="email" id="txtEmail" name="txtEmail" class="form-control" >
                                                 </div>
 											</div>
-											<div class="row">	
-																						
+											<div class="row">							
 												<div class="col-md-4">
 												<label for="txtEmail" class="form-label">Role Mapping</label>	
 													<select id="allRoles" multiple="multiple" class="form-control" style="height:150px">
@@ -129,7 +126,28 @@
 													<select id="assignRoles" name="SubCat" multiple="multiple" class="form-control" style="height:150px">
 													</select>
 												</div>
-                                            </div>                                                                                    
+                                            </div> 
+											
+											<div class="row" style="margin-top:15px">							
+												<div class="col-md-4">
+												<label for="txtEmail" class="form-label">Manager Mapping</label>	
+													<select id="allUsers" multiple="multiple" class="form-control" style="height:150px">
+													
+													</select>
+												</div>	
+												<div class="col-md-2">
+													<label for="txtEmail" class="form-label">Operation</label>													
+													<input onclick="addUsers()" class="btn btn-dark" style="margin-bottom: 2px;" value="Add >" type="button"> 
+													<input onclick="addAllUsers()" class="btn btn-dark" style="margin-bottom: 2px;"  value="Add All >>" type="button">
+													<input onclick="removeUsers()" class="btn btn-dark" style="margin-bottom: 2px;"  value="< Remove" type="button"> 
+													<input onclick="removeAllUsers()" class="btn btn-dark" value="<< Remove All" type="button">
+												</div>	
+												<div class="col-md-4">
+													<label for="txtEmail" class="form-label">Assign Manager</label>													
+													<select id="assignManager" name="SubCat" multiple="multiple" class="form-control" style="height:150px">
+													</select>
+												</div>
+                                            </div> 											
                                         </form>
                                     </div>
                                 </div>
@@ -151,16 +169,11 @@
 	<script src="../js/commonhtml.js"></script>
     <script src="../js/quixnav-init.js"></script>
     <script src="../js/custom.min.js"></script>
-	<script src="../vendor/chartist/js/chartist.min.js"></script>
-	<script src="../vendor/moment/moment.min.js"></script>
-    <script src="../vendor/pg-calendar/js/pignose.calendar.min.js"></script>
-    <script src="../js/dashboard/dashboard-2.js"></script>
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../js/plugins-init/datatables.init.js"></script>
-
-    <script src="../js/common.js"></script>
+	<script src="../js/common.js"></script>
     <script src="../js/manage-users.js"></script>
 	<script src="../js/optiontransfer.js"></script>
+	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../js/plugins-init/datatables.init.js"></script>
 
     <script>        
 		loadAllRoles("U");

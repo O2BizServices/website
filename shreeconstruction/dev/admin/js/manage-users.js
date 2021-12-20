@@ -274,7 +274,6 @@ function sortMenu(response){
 			}
 		});	
 	}
-	console.log("New Map " + newMap);
 	return newMap;
 }
 

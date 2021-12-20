@@ -34,17 +34,13 @@ $("#myfooter").html('<div class="footer">'+
         '</div>');
 function checkAccess(code){
 	var str="";
-	var list = JSON.parse(localStorage.getItem("access"))[code];
-	if(list.length == 0){
-		str='<li></li>';		
-	}else{
-		str='<li><a href="./manage-roles.html">Manage Role</a></li><li><a href="./manage-users.html">Manage User</a></li>';
-	}
+	$(JSON.parse(localStorage.getItem("access"))["Admin Portal"]).each(function(){  
+			str= str + '<li><a href="'+$(this).attr("param")+'">'+$(this).attr("name")+'</a></li>';
+	});
 	return str;
 }	
 function logout(){
-	localStorage.removeItem("token");
-	localStorage.removeItem("access");
+	localStorage.clear();
 	location.href="../index.html";	
 }
 function getUserDetails(){
