@@ -265,10 +265,22 @@ function openUserAdd(){
 	});
 }
 
+function sortMenu(response){
+	var newMap = {};
+	for(var i=1;i<=Object.keys(response).length;i++){
+		$.each(response, function(key, value) {
+			if(i.toString() == key.split(",")[2]){
+				newMap[key]=value;
+			}
+		});	
+	}
+	return newMap;
+}
 
 function screenDetails(response){
+	var newMap = sortMenu(response.responseJSON.details);
 	var str ='<div ><div class="form-group col-md-12">';
-	$.each(response.responseJSON.details, function(key, value) {
+	$.each(newMap, function(key, value) {
 		str = str +  '<h3><u>'+key.split(",")[0]+'</u></h3>';
 		$.each(value, function(key2, value2) {
 		str = str +  '<ul style="margin-left:15px"><li><label for="txtEmail2" class="form-label">'+key2+'</label><ol>';
