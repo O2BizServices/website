@@ -37,7 +37,7 @@
     Plugin.prototype = {
         init: function () {
             var e = this;
-			alert("Started1")
+			alert("Started3")
             var utf8Heading = "<meta http-equiv=\"content-type\" content=\"application/vnd.ms-excel; charset=UTF-8\">";
             e.template = {
                 head: "<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns=\"http://www.w3.org/TR/REC-html40\">" + utf8Heading + "<head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>",
@@ -179,8 +179,7 @@
 
             var isIE = navigator.appVersion.indexOf("MSIE 10") !== -1 || (navigator.userAgent.indexOf("Trident") !== -1 && navigator.userAgent.indexOf("rv:11") !== -1); // this works with IE10 and IE11 both :)
             //if (typeof msie !== "undefined" && msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // this works ONLY with IE 11!!!
-            alert("1")
-			if (isIE) {
+           if (isIE) {
 				alert("2")
                 if (typeof Blob !== "undefined") {
                     //use blobs if we can
@@ -201,22 +200,20 @@
                 }
 
             } else {
-				alert("4");
-                var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
-				alert("5");
-                window.URL = window.URL || window.webkitURL;
+				var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
+				window.URL = window.URL || window.webkitURL;
 				alert("6")
-				alert(window.URL);
-                link = window.URL.createObjectURL(blob);
-                a = document.createElement("a");
-                a.download = getFileName(e.settings);
-                a.href = link;
+				link = window.URL.createObjectURL(blob);
+                var abcd= document.createElement("a");
+				alert("7")
+                abcd.download = "abcde";
+                abcd.href = link;
+				alert("8")
+                document.body.appendChild(abcd);
+alert("9");
+                abcd.click();
 
-                document.body.appendChild(a);
-
-                a.click();
-
-                document.body.removeChild(a);
+  alert("10");             document.body.removeChild(abcd);
             }
 
             return true;
