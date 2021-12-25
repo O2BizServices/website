@@ -37,7 +37,7 @@
     Plugin.prototype = {
         init: function () {
             var e = this;
-			alert("Started")
+			alert("Started1")
             var utf8Heading = "<meta http-equiv=\"content-type\" content=\"application/vnd.ms-excel; charset=UTF-8\">";
             e.template = {
                 head: "<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns=\"http://www.w3.org/TR/REC-html40\">" + utf8Heading + "<head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>",
@@ -179,7 +179,9 @@
 
             var isIE = navigator.appVersion.indexOf("MSIE 10") !== -1 || (navigator.userAgent.indexOf("Trident") !== -1 && navigator.userAgent.indexOf("rv:11") !== -1); // this works with IE10 and IE11 both :)
             //if (typeof msie !== "undefined" && msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // this works ONLY with IE 11!!!
-            if (isIE) {
+            alert("1")
+			if (isIE) {
+				alert("2")
                 if (typeof Blob !== "undefined") {
                     //use blobs if we can
                     fullTemplate = e.format(fullTemplate, e.ctx); // with this, works with IE
@@ -188,6 +190,7 @@
                     var blob1 = new Blob(fullTemplate, { type: "text/html" });
                     window.navigator.msSaveBlob(blob1, getFileName(e.settings) );
                 } else {
+					alert("3")
                     //otherwise use the iframe and save
                     //requires a blank iframe on page called txtArea1
                     txtArea1.document.open("text/html", "replace");
@@ -198,8 +201,12 @@
                 }
 
             } else {
+				alert("4");
                 var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
+				alert("5");
                 window.URL = window.URL || window.webkitURL;
+				alert("6")
+				alert(window.URL);
                 link = window.URL.createObjectURL(blob);
                 a = document.createElement("a");
                 a.download = getFileName(e.settings);
