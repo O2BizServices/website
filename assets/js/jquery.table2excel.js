@@ -202,7 +202,7 @@
 				var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
 				window.URL = window.URL || window.webkitURL;
 				alert("6666")
-				link = window.webkitURL.createObjectURL(blob);
+				link = (window.URL ? URL : webkitURL).createObjectURL(blob);
                 var abcd= document.createElement("a");
 				alert("7")
                 abcd.download = "abcde";
