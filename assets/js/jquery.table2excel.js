@@ -37,8 +37,7 @@
     Plugin.prototype = {
         init: function () {
             var e = this;
-			alert("A1")
-            var utf8Heading = "<meta http-equiv=\"content-type\" content=\"application/vnd.ms-excel; charset=UTF-8\">";
+			 var utf8Heading = "<meta http-equiv=\"content-type\" content=\"application/vnd.ms-excel; charset=UTF-8\">";
             e.template = {
                 head: "<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns=\"http://www.w3.org/TR/REC-html40\">" + utf8Heading + "<head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>",
                 sheet: {
@@ -201,27 +200,15 @@
             } else {
 				var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
 				window.URL = window.URL || window.webkitURL;
-				alert("66")
-				try{
-				link = (window.URL ? URL : webkitURL).createObjectURL(blob);
-				alert("If done")
-				}catch(e){
-					alert("Error")
-					alert(e);
-				}
+				link = window.URL.createObjectURL(blob);
                 var abcd= document.createElement("a");
-				alert("7")
-                abcd.download = "abcde";
+				abcd.download = "abcde";
                 abcd.href = link;
-				alert("8")
-                document.body.appendChild(abcd);
+				document.body.appendChild(abcd);
 				alert("9");
                 abcd.click();
 				alert("10");
 				document.body.removeChild(abcd);
-				alert("11");
-				setTimeout(function(){ window.URL.revokeObjectURL(url); }, 3000);
-				alert("12");
             }
 
             return true;
