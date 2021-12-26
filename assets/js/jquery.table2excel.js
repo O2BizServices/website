@@ -198,17 +198,19 @@
                 }
 
             } else {
-				var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
+				//var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "application/vnd.ms-excel"});
+				var blob = new Blob([e.format(fullTemplate, e.ctx)], {type: "text/html"});
 				window.URL = window.URL || window.webkitURL;
-				link = window.URL.createObjectURL(blob);
+				var url1  = window.URL.createObjectURL(blob);
                 var abcd= document.createElement("a");
 				abcd.download = "abcde";
-                abcd.href = link;
+                abcd.href = url1;
 				document.body.appendChild(abcd);
 				alert("9");
                 abcd.click();
 				alert("10");
 				document.body.removeChild(abcd);
+				setTimeout(function() {window.URL.revokeObjectURL(url1);},2000);
             }
 
             return true;
