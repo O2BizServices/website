@@ -14,7 +14,7 @@ const QA = 'QA';
 const PROD = 'PROD';
 const UAT = 'UAT';
 
-const activeProfile = DEV;
+const activeProfile = PROD;
 
 /**
  * This method use to get aws server url base on active profile.
