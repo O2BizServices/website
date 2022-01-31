@@ -1,8 +1,8 @@
 
-const DEV_URL = 'https://un137lb64l.execute-api.ap-southeast-1.amazonaws.com/dev/api/v1/UFC/';
-const QA_URL = 'https://nchbzfmmu5.execute-api.ap-south-1.amazonaws.com/qa/api/v1/UFC/';
-const PROD_URL = 'https://t21urj33n9.execute-api.ap-south-1.amazonaws.com/prod/api/v1/UFC/';
-const UAT_URL = ' https://ut8olba8ia.execute-api.us-east-2.amazonaws.com/uat/api/v1/UFC/';
+const DEV_URL = 'https://un137lb64l.execute-api.ap-southeast-1.amazonaws.com/dev/api/v1/UFI/';
+const QA_URL = 'https://nchbzfmmu5.execute-api.ap-south-1.amazonaws.com/qa/api/v1/UFI/';
+const PROD_URL = 'https://t21urj33n9.execute-api.ap-south-1.amazonaws.com/prod/api/v1/UFI/';
+const UAT_URL = ' https://ut8olba8ia.execute-api.us-east-2.amazonaws.com/uat/api/v1/UFI/';
 
 const DESKTOP = "DESKTOP";
 const MOBILE = "MOBILE";
