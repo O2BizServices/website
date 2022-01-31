@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Stone Crusher :: Manage Users</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
+    <!-- Datatable -->
+    <link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+		<div id="leftMenu"></div>
+       
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Manage Users</h4>                            
+                        </div>
+                    </div>                    
+                </div> 
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">                                                       
+                            <div class="card-body">      
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-dark" onclick="openUserAdd()"><i class="fa fa-plus-square"></i> Add</button>
+                                </div>                           
+                                <div class="clearfix">&nbsp;</div>
+                                <div id="errorDiv"></div>
+                                <div class="clearfix">&nbsp;</div>
+                                <div class="table-responsive">
+                                    <table class="table" id="datatableid">
+                                        <thead class="thead-primary">
+                                            <tr>
+                                                <th>ID</th>                                               
+												<th>User Name</th>
+												 <th>Mobile No.</th>
+                                                <th>Email ID</th>
+                                                <th>Roles</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="idUserTableBody"></tbody>
+                                    </table>
+                                
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal fade" id="showModalDialog" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">User Details</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="basic-form">
+                                        <form name="userDetailsForm" id="userDetailsForm" method="post">    
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label" for="txtMobile">Mobile No. <span class="required">(*)</span></label>
+                                                    <input type="text" id="txtMobile" name="txtMobile" class="form-control">
+													<input type="hidden" id="txtid" name="txtid" >
+                                                </div>
+												<div class="form-group col-md-6">
+                                                    <label class="form-label" for="txtMobile">User Name <span class="required">(*)</span></label>
+                                                    <input type="text" id="txtusername" name="txtusername" class="form-control">
+                                                </div>                                                
+											</div>
+											<div class="row">											
+                                                <div class="form-group col-md-6">
+                                                    <label for="txtPassword" class="form-label">Password <span class="required">(*)</span></label>
+													<div class="input-group" id="show_hide_password">
+													   <input type="password" id="txtPassword" name="txtPassword" class="form-control" >
+														<div class="input-group-addon">
+															<a href="javascript:void(0)" onclick="return showPass()"><i id="eyePass" class="fa fa-eye-slash" aria-hidden="true"></i></a>
+														</div>
+													</div>
+                                                </div>   
+                                               <div class="form-group col-md-6">
+                                                    <label for="txtEmail" class="form-label">Email</label>
+                                                    <input type="email" id="txtEmail" name="txtEmail" class="form-control" >
+                                                </div>
+											</div>
+											<div class="row">							
+												<div class="col-md-4">
+												<label for="txtEmail" class="form-label">Role Mapping</label>	
+													<select id="allRoles" multiple="multiple" class="form-control" style="height:150px">
+													
+													</select>
+												</div>	
+												<div class="col-md-2">
+													<label for="txtEmail" class="form-label">Operation</label>													
+													<input onclick="addRoles()" class="btn btn-dark" style="margin-bottom: 2px;" value="Add >" type="button"> 
+													<input onclick="addAllRoles()" class="btn btn-dark" style="margin-bottom: 2px;"  value="Add All >>" type="button">
+													<input onclick="removeRoles()" class="btn btn-dark" style="margin-bottom: 2px;"  value="< Remove" type="button"> 
+													<input onclick="removeAllRoles()" class="btn btn-dark" value="<< Remove All" type="button">
+												</div>	
+												<div class="col-md-4">
+													<label for="txtEmail" class="form-label">Assign Role</label>													
+													<select id="assignRoles" name="SubCat" multiple="multiple" class="form-control" style="height:150px">
+													</select>
+												</div>
+                                            </div> 
+											
+											<div class="row" style="margin-top:15px">							
+												<div class="col-md-4">
+												<label for="txtEmail" class="form-label">Manager Mapping</label>	
+													<select id="allUsers" multiple="multiple" class="form-control" style="height:150px">
+													
+													</select>
+												</div>	
+												<div class="col-md-2">
+													<label for="txtEmail" class="form-label">Operation</label>													
+													<input onclick="addUsers()" class="btn btn-dark" style="margin-bottom: 2px;" value="Add >" type="button"> 
+													<input onclick="addAllUsers()" class="btn btn-dark" style="margin-bottom: 2px;"  value="Add All >>" type="button">
+													<input onclick="removeUsers()" class="btn btn-dark" style="margin-bottom: 2px;"  value="< Remove" type="button"> 
+													<input onclick="removeAllUsers()" class="btn btn-dark" value="<< Remove All" type="button">
+												</div>	
+												<div class="col-md-4">
+													<label for="txtEmail" class="form-label">Assign Manager</label>													
+													<select id="assignManager" name="SubCat" multiple="multiple" class="form-control" style="height:150px">
+													</select>
+												</div>
+                                            </div> 											
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                <button type="button" id="btnUFSubmit" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="myfooter"></div>
+    </div>
+
+    <script src="../vendor/global/global.min.js"></script>
+	<script src="../js/commonhtml.js"></script>
+    <script src="../js/quixnav-init.js"></script>
+    <script src="../js/custom.min.js"></script>
+	<script src="../js/common.js"></script>
+    <script src="../js/manage-users.js"></script>
+	<script src="../js/optiontransfer.js"></script>
+	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../js/plugins-init/datatables.init.js"></script>
+
+    <script>        
+		loadAllRoles("U");
+    </script>
+
+</body>
+
+</html>

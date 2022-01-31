@@ -12,7 +12,6 @@ const COMMON = "COMMON";
 const DEV = 'DEV';
 const QA = 'QA';
 const PROD = 'PROD';
-const UAT = 'UAT';
 
 const activeProfile = UAT;
 
@@ -27,8 +26,6 @@ function getServerUrl() {
       return QA_URL;
     } else if (activeProfile == PROD) {
       return PROD_URL;
-    }else if (activeProfile == UAT) {
-      return UAT_URL;
     }
     return '';
   }
