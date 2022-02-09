@@ -1,11 +1,11 @@
 {
-    "name": "Shree Construction Web App",
-    "short_name": "Shree Construction Web App",
+    "name": "O2Crusher Web App",
+    "short_name": "O2Crusher Web App",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Shree Construction Web App",
+    "description": "O2Crusher Web App",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
