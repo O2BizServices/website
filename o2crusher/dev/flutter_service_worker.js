@@ -3,14 +3,15 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "0e7be97ab56365d129e08079ada395e1",
+  "assets/AssetManifest.json": "9198dc7f501ef9003c123f11608b8b36",
 "assets/assets/fonts/Quicksand-Bold.ttf": "410a26014ce7e25824ae18349d2c92d3",
 "assets/assets/fonts/Quicksand-Light.ttf": "7dcc3e19fb99b72cf354f6caee2df104",
 "assets/assets/fonts/Quicksand-Medium.ttf": "7e2479fe3619b4b56dbfc0094ff23a3c",
 "assets/assets/fonts/Quicksand-Regular.ttf": "9a891411c3856f2db214f3507349a424",
 "assets/assets/fonts/Quicksand-SemiBold.ttf": "feb6fb672a260bc45a8bfb278e233772",
 "assets/assets/images/app_icon.png": "76928d42d7325ec76271b69277d52d76",
-"assets/assets/images/app_logo.png": "beebbbc54b1deb9b5ef5184cecab96e7",
+"assets/assets/images/app_logo.png": "1aa431e574a71f484a70d8ceb2d3bcc0",
+"assets/assets/images/drawer-logo.png": "334399d1356f6e4ee262fd9c82106a2e",
 "assets/assets/images/notification_logo.png": "27a4e96ee60d7ae4f3785d342ef0247d",
 "assets/assets/images/o2bizLogo.png": "34b84eda3966dfe7f8d3e40ddc2fc5ce",
 "assets/FontManifest.json": "549d4f05705b6e948f5154c30a31bf5c",
@@ -29,9 +30,9 @@ const RESOURCES = {
 "favicon.ico": "db8039dd7f1af2baee3c0cf89af8839e",
 "icons/Icon-192.png": "7face21db8bda1d37b609b84882325b0",
 "icons/Icon-512.png": "04fbca0ed7623e00d954222e44c668fd",
-"index.html": "2fc3bdf3503a4034c75665a1a8e6d376",
-"/": "2fc3bdf3503a4034c75665a1a8e6d376",
-"main.dart.js": "62dca2aba01393e9f1f0a1557855ad0f",
+"index.html": "48f4909e1d58f82fe59caecb56675808",
+"/": "48f4909e1d58f82fe59caecb56675808",
+"main.dart.js": "dc7da53aa681af1d0d7dc5c0a1034307",
 "manifest.json": "368ebefc42a091127131e5ea17ee6e5e",
 "version.json": "aa46b574194424f61534f942ab5b2527"
 };
