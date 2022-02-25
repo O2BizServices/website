@@ -21,7 +21,7 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-                                    <h4 class="text-center mb-4">O2Crusher Admin Portal</h4>
+                                    <h4 class="text-center mb-4">O2Crusher Admin Portal QA</h4>
                                     <form action="index.html">
 										<div class="form-group">
                                             <label><strong>Code</strong></label>
