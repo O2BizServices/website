@@ -266,14 +266,23 @@ footer {
 				document.getElementById("content").innerHTML=table;	
 
 			if(data["Status"] == "TXN_SUCCESS"){
-				document.getElementById("invoiceid").innerHTML= '<input type="button" class="button" value="Download Invoice" onclick="downloadInvoice(this)">';
-
+				document.getElementById("invoiceid").innerHTML= '<input type="button" class="button" value="Download Invoice"  onclick="downloadInvoice(this,'+result+')">';
 			}			
 		}
 		
-		function downloadInvoice(obj){		
-			console.log("Invoice Download.......")
-			console.log("Invoice Download.......")
+		function downloadInvoice(obj,result){	
+			var result1 = atob(result);
+			var data = JSON.parse(result1);			
+			var params = {};
+			params['orderid'] = data["OrderID"];
+			const xhttp = new XMLHttpRequest();
+			xhttp.send(JSON.stringify(params))
+			xhttp.setRequestHeader('token', localStorage.getItem("flutter.token").replaceAll("\"", ""));
+			xhttp.onload = function() {
+				console.log(this.responseText);
+			}
+			xhttp.open("POST", data["url"]+"/paymentinvoice");
+			xhttp.send();
 		}
 	</script>
   </body>
