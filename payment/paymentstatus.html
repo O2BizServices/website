@@ -202,12 +202,7 @@ footer {
 
 
 	</style>
-	<script>
-	var result = window.location.search.substr(1);
-	var result1 = atob(result);
-	var data = JSON.parse(result1);		
-	document.getElementById("paystatus").innerHTML="Payment Status : "+data["Status"];
-	</script>
+
   </head>
   <body >
   <div style="border: 2px dashed #0087C3;padding:7px">
@@ -215,61 +210,47 @@ footer {
       
       <div id="company">
         <h1 class="name"><b id="paystatus"></b></h1>
-			<h3 class="desc"><b>Invoice No   : {{invoiceNo}}</b></h3>
-            <h3 class="desc"><b>Invoice Date : {{invoicedate}}</b></h3>
-      </div>
+	  </div>
 	  <div id="logo">
         <img src="https://o2bizservices.com/assets/img/logo.png" width="210" alt="">
       </div>
     </header>
     <main>
       <div id="details" class="clearfix">
-        <div id="client" style="width:300px">
-          <h2 class="name"><u>Billed By:</u></h2>
-          <div class="name">{{o2baddress}}</div>
-        </div>
-        <div id="client" style="width:300px">
-          <h2 class="name"><u>Billed To:</u></h2>
-          <div class="name">{{clientAddress}}</div>
+        <div id="client">
+          <h2 class="name" id="InvalidStatus"></h2>
         </div>
       </div>
 	  
-	   <div>
-          <h2>Below are Payment Summary / Digital Invoice</h2><hr>
-        </div>
-	  
-      <table border="0" cellspacing="0" cellpadding="0">
-		<thead>
-			<tr>
-				<th class="no">Item</th>
-				<th class="no">QTY</th>
-				<th class="no">Rate</th>
-				<th class="no">Discount</th>
-				<th class="no">Amount</th>
-			</tr>	
-		</thead>
-        <tbody>
-			{{tablerows}}
-        </tbody>
-      </table>
-	  <div id="details" class="clearfix">
-        <div id="client" style="width:220px">
-          <h2 class="name"><u>Bank Details</u></h2><br>
-          <div class="name">{{bankdetails}}</div>
-        </div>
-		<div id="" class="clearfix" style="width:200px;float: left;">
-		  <div id="digitalsign" style="float:right"><img src="https://o2bizservices.com/assets/img/o2bstamp.jpg"></div>
-	  </div>
-        <div id="client12" style="float: right;font-size: 16px;">
-          <h2 class="name"><u>Amount Details</u></h2>
-          <div class="name">{{amountdetails}}</div>
-        </div>
-      </div>
+     <div id="content"></div>
+	
 	  <div id="notices">
-        <div class="notice"><b>Payment Mode: </b>{{paymode}}</div>
         <div class="notice">For any enquiry, reach out via email at info@o2bizservices.com, call on +91 98709 58460</div>
       </div>
     </main>
    </div>
+   	<script>
+		var result = window.location.search.substr(1);
+		var result1 = atob(result);
+		var data = JSON.parse(result1);		
+		document.getElementById("paystatus").innerHTML="Payment Status : "+data["Status"];
+		if(data["Status"] == "INVALID"){
+			document.getElementById("InvalidStatus").innerHTML="Your Payment Status is Invalid. Please go to Home Page and start transaction again.";
+		}else{		
+			var table =  '<table border="0" cellspacing="0" cellpadding="0"><tbody>'+
+			'<tr><td class="no">Order ID</td><td class="no">'+data["OrderID"]+'</td></tr>'+
+			'<tr><td class="no">Name</td><td class="no">'+data["Name"]+'</td></tr>'+
+			'<tr><td class="no">Payment Status </td><td class="no">'+data["Status"]+'</td></tr>'+
+			'<tr><td class="no">Amount </td><td class="no">'+data["Amount"]+'</td></tr>'+
+			'<tr><td class="no">Payment Mode </td><td class="no">'+data["mode"]+'</td></tr>';		
+			if(data["Status"] == "TXN_SUCCESS"){
+				table=table + '<tr><td class="no">Invoice No </td><td class="no">'+data["Invoice"]+'</td></tr>';
+			}else{
+				table=table + '<tr><td class="no">Failure Message </td><td class="no">'+data["msg"]+'</td></tr>';		
+			}
+				table = table + '</tbody>';
+				document.getElementById("content").innerHTML=table;		
+		}
+	</script>
   </body>
 </html>
