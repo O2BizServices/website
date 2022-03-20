@@ -5,6 +5,7 @@
     </head>
     <body>
         <div id="paytm-checkoutjs"></div>
+		 <script type="application/javascript" crossorigin="anonymous" src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/dummyExampleMIDIdentifier.js" onload="onScriptLoad();"></script>
 <script>
   function onScriptLoad(){
   debugger;
@@ -15,6 +16,7 @@
         "root": "",
         "flow": "DEFAULT",
         "data": {
+		  "mid": data["mid"],
           "orderId": data["orderid"], /* update order id */
           "token": data["token"], /* update token value */
           "tokenType": "TXN_TOKEN",
@@ -28,7 +30,7 @@
           } 
         }
       };
-
+	console.log(config);
       if(window.Paytm && window.Paytm.CheckoutJS){
           window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
               // initialze configuration using init method 
@@ -42,6 +44,6 @@
       } 
   }
 </script>
- <script type="application/javascript" crossorigin="anonymous" src="https://securegw.paytm.in/merchantpgpui/checkoutjs/merchants/dummyExampleMIDIdentifier.js" onload="onScriptLoad();"></script>
+
     </body>
 </html>
