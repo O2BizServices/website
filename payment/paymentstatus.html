@@ -281,7 +281,7 @@ footer {
 				obj.value = 'Download Invoice';
 				obj.disabled=false;
 				var arrayStr = this.responseText;
-				var array = JSON.parse(array);
+				var array = JSON.parse(arrayStr);
 				const linkSource = "data:application/"+array[0].toLowerCase()+";base64,"+array[2].replaceAll('"','');
 				const downloadLink = document.createElement("a");
 				const fileName = array[1];
