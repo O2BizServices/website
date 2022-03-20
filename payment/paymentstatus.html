@@ -238,7 +238,7 @@ footer {
       </div>
     </main>
    </div>
-   	<script>
+   <script>
 		var result = window.location.search.substr(1);
 		var result1 = atob(result);
 		var data = JSON.parse(result1);		
@@ -271,12 +271,23 @@ footer {
 			var data = JSON.parse(result1);			
 			var params = {};
 			params['orderid'] = data["OrderID"];
+			obj.value = 'Please Wait....';
+			obj.disabled=true
 			const xhttp = new XMLHttpRequest();
 			xhttp.open("POST", data["url"]+"/paymentinvoice");
 			xhttp.setRequestHeader('token', localStorage.getItem("flutter.token").replaceAll("\"", ""));
 			xhttp.send(JSON.stringify(params))
 			xhttp.onload = function() {
-				console.log(this.responseText);
+				obj.value = 'Download Invoice';
+				obj.disabled=false;
+				var arrayStr = this.responseText;
+				var array = JSON.parse(array);
+				const linkSource = "data:application/"+array[0].toLowerCase()+";base64,"+array[2].replaceAll('"','');
+				const downloadLink = document.createElement("a");
+				const fileName = array[1];
+				downloadLink.href = linkSource;
+				downloadLink.download = fileName;
+				downloadLink.click();﻿	
 			}
 		}
 	</script>
