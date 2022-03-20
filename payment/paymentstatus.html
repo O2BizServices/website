@@ -260,7 +260,7 @@ footer {
 			if(data["Status"] == "TXN_SUCCESS"){
 				table=table + '<tr><td class="no">Invoice No </td><td class="total">'+data["Invoice"]+'</td></tr>';
 			}else{
-				table=table + '<tr><td class="no">Failure Message </td><td class="total">'+data["msg"]+'</td></tr>';		
+				table=table + '<tr><td class="no">Failure Message </td><td class="total">'+data["msg"] == 'null' ? '' : data["msg"] +'</td></tr>';		
 			}
 				table = table + '</tbody>';
 				document.getElementById("content").innerHTML=table;	
