@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>O2Biz Payment</title>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
-		
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>		
 	  </head>
     <body>
         <div id="paytm-checkoutjs"></div>
@@ -10,20 +9,16 @@
 <script>
 	var result = window.location.search.substr(1);
 	var result1 = atob(result);
-	var data = JSON.parse(result1);
-	
+	var data = JSON.parse(result1);	
 	var script_tag = document.createElement('script');
 	script_tag.setAttribute('crossorigin','anonymous');
 	script_tag.setAttribute('type','application/javascript');
-	script_tag.setAttribute('src','https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/'+data["mid"]);
-	document.head.appendChild(script_tag);
-	
+	script_tag.setAttribute('src','https://'+data["urlPrefix"]+'/merchantpgpui/checkoutjs/merchants/'+data["mid"]+".js");
+	document.head.appendChild(script_tag);	
 	script_tag.onload = function(){
 		onScriptLoad();
 	};
-
-
-
+	
   function onScriptLoad(){
 	var config = {
         "root": "",
@@ -45,9 +40,7 @@
 	console.log(config);
       if(window.Paytm && window.Paytm.CheckoutJS){
           window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
-              // initialze configuration using init method 
               window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
-                  // after successfully updating configuration, invoke JS Checkout
                   window.Paytm.CheckoutJS.invoke();
               }).catch(function onError(error){
                   console.log("error => ",error);
