@@ -279,16 +279,20 @@ footer {
 			xhttp.setRequestHeader('token', localStorage.getItem("flutter.token").replaceAll("\"", ""));
 			xhttp.send(JSON.stringify(params))
 			xhttp.onload = function() {
-				obj.value = 'Download Invoice';
-				obj.disabled=false;
-				var arrayStr = this.responseText;
-				var array = JSON.parse(arrayStr);
-				const linkSource = "data:application/"+array[0].toLowerCase()+";base64,"+array[2].replaceAll('"','');
-				const downloadLink = document.createElement("a");
-				const fileName = array[1];
-				downloadLink.href = linkSource;
-				downloadLink.download = fileName;
-				downloadLink.click();﻿	
+				if (this.readyState == 4 && this.status == 200) {
+					obj.value = 'Download Invoice';
+					obj.disabled=false;
+					var arrayStr = this.responseText;
+					var array = JSON.parse(arrayStr);
+					const linkSource = "data:application/"+array[0].toLowerCase()+";base64,"+array[2].replaceAll('"','');
+					const downloadLink = document.createElement("a");
+					const fileName = array[1];
+					downloadLink.href = linkSource;
+					downloadLink.download = fileName;
+					downloadLink.click();﻿	
+				}else{
+					alert("Your url session has expire, Please login to portal and download invoice.");
+				}
 			}
 		}
 	</script>
