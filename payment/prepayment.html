@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>JS Checkout Demo</title>
+        <title>O2Biz Payment</title>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
 		
 	  </head>
@@ -8,7 +8,6 @@
         <div id="paytm-checkoutjs"></div>
 		 
 <script>
-debugger;
 	var result = window.location.search.substr(1);
 	var result1 = atob(result);
 	var data = JSON.parse(result1);
@@ -20,22 +19,20 @@ debugger;
 	document.head.appendChild(script_tag);
 	
 	script_tag.onload = function(){
-	console.log("Script is loaded");
-	onScriptLoad();
+		onScriptLoad();
 	};
 
 
 
   function onScriptLoad(){
-  debugger;
 	var config = {
         "root": "",
         "flow": "DEFAULT",
         "data": {
-		  "orderId": data["orderid"], /* update order id */
-          "token": data["token"], /* update token value */
+		  "orderId": data["orderid"],
+          "token": data["token"],
           "tokenType": "TXN_TOKEN",
-          "amount": data["finalAmount"] /* update amount */
+          "amount": data["finalAmount"]
         },
         "handler": {
           "notifyMerchant": function(eventName,data){
