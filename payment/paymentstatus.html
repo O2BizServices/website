@@ -138,7 +138,7 @@ table .qty {
 
 table .total {
   text-align: left;
-    width:70%
+    width:30%
 }
 
 table td.unit,
@@ -199,6 +199,18 @@ footer {
   text-align: center;
   margin-top:25px;
 }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 
 	</style>
@@ -223,6 +235,8 @@ footer {
       </div>
 	  
      <div id="content"></div>
+	 
+	  <div id="invoiceid" style="text-align:center"></div>
 	
 	  <div id="notices">
         <div class="notice">For any enquiry, reach out via email at info@o2bizservices.com, call on +91 98709 58460</div>
@@ -238,18 +252,28 @@ footer {
 			document.getElementById("InvalidStatus").innerHTML="Your Payment Status is Invalid. Please go to Home Page and start transaction again.";
 		}else{		
 			var table =  '<table border="0" cellspacing="0" cellpadding="0"><tbody>'+
-			'<tr><td class="no">Order ID</td><td class="no">'+data["OrderID"]+'</td></tr>'+
-			'<tr><td class="no">Name</td><td class="no">'+data["Name"]+'</td></tr>'+
-			'<tr><td class="no">Payment Status </td><td class="no">'+data["Status"]+'</td></tr>'+
-			'<tr><td class="no">Amount </td><td class="no">'+data["Amount"]+'</td></tr>'+
-			'<tr><td class="no">Payment Mode </td><td class="no">'+data["mode"]+'</td></tr>';		
+			'<tr><td class="no">Order ID</td><td class="total">'+data["OrderID"]+'</td></tr>'+
+			'<tr><td class="no">Name</td><td class="total">'+data["Name"]+'</td></tr>'+
+			'<tr><td class="no">Payment Status </td><td class="total">'+data["Status"]+'</td></tr>'+
+			'<tr><td class="no">Amount </td><td class="total">'+data["Amount"]+' Rs</td></tr>'+
+			'<tr><td class="no">Payment Mode </td><td class="total">'+data["mode"]+'</td></tr>';		
 			if(data["Status"] == "TXN_SUCCESS"){
-				table=table + '<tr><td class="no">Invoice No </td><td class="no">'+data["Invoice"]+'</td></tr>';
+				table=table + '<tr><td class="no">Invoice No </td><td class="total">'+data["Invoice"]+'</td></tr>';
 			}else{
-				table=table + '<tr><td class="no">Failure Message </td><td class="no">'+data["msg"]+'</td></tr>';		
+				table=table + '<tr><td class="no">Failure Message </td><td class="total">'+data["msg"]+'</td></tr>';		
 			}
 				table = table + '</tbody>';
-				document.getElementById("content").innerHTML=table;		
+				document.getElementById("content").innerHTML=table;	
+
+			if(data["Status"] == "TXN_SUCCESS"){
+				document.getElementById("invoiceid").innerHTML= '<input type="button" class="button" value="Download Invoice" onclick="downloadInvoice(this)">';
+
+			}			
+		}
+		
+		function downloadInvoice(obj){		
+			console.log("Invoice Download.......")
+			console.log("Invoice Download.......")
 		}
 	</script>
   </body>

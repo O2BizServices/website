@@ -5,6 +5,34 @@
 	  </head>
     <body>
         <div id="paytm-checkoutjs"></div>
+		
+		<style>
+		.loader {
+		  border: 16px solid #f3f3f3;
+		  border-radius: 50%;
+		  border-top: 16px solid #3498db;
+		  width: 80px;
+		  height: 80px;
+		  -webkit-animation: spin 2s linear infinite; /* Safari */
+		  animation: spin 2s linear infinite;
+		}
+
+		/* Safari */
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
+</style>
+
+<div align="center">
+	<h2>Please wait Transaction in Progress...</h2>
+	<div class="loader"></div>
+</div>
 		 
 <script>
 	var result = window.location.search.substr(1);
