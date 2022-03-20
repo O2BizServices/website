@@ -8,17 +8,31 @@
         <div id="paytm-checkoutjs"></div>
 		 
 <script>
-  function onScriptLoad(){
-  debugger;
+debugger;
 	var result = window.location.search.substr(1);
 	var result1 = atob(result);
-	var data = JSON.parse(result1)
+	var data = JSON.parse(result1);
+	
+	var script_tag = document.createElement('script');
+	script_tag.setAttribute('crossorigin','anonymous');
+	script_tag.setAttribute('type','application/javascript');
+	script_tag.setAttribute('src','https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/'+data["mid"]);
+	document.head.appendChild(script_tag);
+	
+	script_tag.onload = function(){
+	console.log("Script is loaded");
+	onScriptLoad();
+	};
+
+
+
+  function onScriptLoad(){
+  debugger;
 	var config = {
         "root": "",
         "flow": "DEFAULT",
         "data": {
-		  "mid": data["mid"],
-          "orderId": data["orderid"], /* update order id */
+		  "orderId": data["orderid"], /* update order id */
           "token": data["token"], /* update token value */
           "tokenType": "TXN_TOKEN",
           "amount": data["finalAmount"] /* update amount */
@@ -45,7 +59,7 @@
       } 
   }
 </script>
-	<script type="application/javascript" crossorigin="anonymous" src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/dummyExampleMIDIdentifier.js" onload="onScriptLoad();"></script>
+	
   
     </body>
 </html>
