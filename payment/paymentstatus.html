@@ -203,7 +203,10 @@ footer {
 
 	</style>
 	<script>
-	
+	var result = window.location.search.substr(1);
+	var result1 = atob(result);
+	var data = JSON.parse(result1);		
+	document.getElementById("paystatus").innerHTML="Payment Status : "+data["Status"];
 	</script>
   </head>
   <body >
@@ -211,7 +214,7 @@ footer {
     <header class="clearfix">
       
       <div id="company">
-        <h1 class="name"><b>Payment Status</b></h1>
+        <h1 class="name"><b id="paystatus"></b></h1>
 			<h3 class="desc"><b>Invoice No   : {{invoiceNo}}</b></h3>
             <h3 class="desc"><b>Invoice Date : {{invoicedate}}</b></h3>
       </div>
