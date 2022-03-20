@@ -4,11 +4,6 @@
     <meta charset="utf-8">
     <title>O2Crusher Payment Receipt</title>
     <style>
-	@font-face {
-  font-family: SourceSansPro;
-  src: url(https://rthsv.com/fonts/SourceSansPro-Regular.ttf);
-}
-
 .clearfix:after {
   content: "";
   display: table;
@@ -266,23 +261,23 @@ footer {
 				document.getElementById("content").innerHTML=table;	
 
 			if(data["Status"] == "TXN_SUCCESS"){
-				document.getElementById("invoiceid").innerHTML= '<input type="button" class="button" value="Download Invoice"  onclick="downloadInvoice(this,'+result+')">';
+				document.getElementById("invoiceid").innerHTML= '<input type="button" class="button" value="Download Invoice"  onclick="downloadInvoice(this)">';
 			}			
 		}
 		
-		function downloadInvoice(obj,result){	
+		function downloadInvoice(obj,result){
+			var result = window.location.search.substr(1);
 			var result1 = atob(result);
 			var data = JSON.parse(result1);			
 			var params = {};
 			params['orderid'] = data["OrderID"];
 			const xhttp = new XMLHttpRequest();
-			xhttp.send(JSON.stringify(params))
+			xhttp.open("POST", data["url"]+"/paymentinvoice");
 			xhttp.setRequestHeader('token', localStorage.getItem("flutter.token").replaceAll("\"", ""));
+			xhttp.send(JSON.stringify(params))
 			xhttp.onload = function() {
 				console.log(this.responseText);
 			}
-			xhttp.open("POST", data["url"]+"/paymentinvoice");
-			xhttp.send();
 		}
 	</script>
   </body>
