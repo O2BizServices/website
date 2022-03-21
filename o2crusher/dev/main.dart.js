@@ -89157,7 +89157,7 @@ a0.push(m.k3?A.cf(l,A.N(A.a([A.aH(A.a([A.O("Brass Entry: ",l,l,l,A.ab(l,l,l,l,l,
 s=m.k2
 s.toString
 if(s){s=A.I(B.Pj,l,l)
-s=A.aC("Add Brass ","Brass ",new A.aBB(),m.a7,B.q,l,l,A.a([new A.er(A.bM(f,!0),!0,"")],q),!1,!1,!1,new A.k("brassTextField",r),l,1,!1,new A.aBC(m),l,s,l,B.r,B.X)}else s=A.j(l,l,l)
+s=A.aC("Add Brass ","Brass ",new A.aBB(),m.a7,B.q,l,l,A.a([new A.er(A.bM("[0-9.]",!0),!0,"")],q),!1,!1,!1,new A.k("brassTextField",r),l,1,!1,new A.aBC(m),l,s,l,B.r,B.X)}else s=A.j(l,l,l)
 a0.push(s)
 s=m.k2
 s.toString
@@ -90092,7 +90092,7 @@ return s===$?this.r=A.a([],t.j):s},
 U(){this.a1()
 this.cV()},
 C(a,b){var s,r=this,q=null,p="Search",o=A.d1(!0,q,!0,q,q,!1),n=A.bi(b,r.a.c),m=t.O,l=t.p
-m=A.ag(A.br(q,A.N(A.a([A.j(q,15,q),A.aC(p,p,new A.a6P(),r.f,B.q,q,A.I(B.c3,q,q),q,!1,!1,!1,new A.k("searchTextField",m),q,1,!1,q,q,q,q,B.r,B.x),A.aH(A.a([A.e3(p,new A.a6Q(r,o),A.I(B.cn,q,q),new A.k("search",m)),A.e3("Refresh",new A.a6R(r),A.I(B.bL,q,q),new A.k("refresh",m)),A.e3("Add Entry",new A.a6S(r),A.I(B.tb,q,q),new A.k("Add",m))],l),B.i,B.B,B.f,q,q),new A.aJ(new A.a7(10,10,10,10),A.O(r.x,q,q,q,A.ab(q,q,B.z,q,q,q,q,q,q,q,q,q,q,B.aF,q,q,!0,q,q,q,q,q,q,q,q),q,q,q),q)],l),B.i,B.B,B.f),r.e),q,q,q)
+m=A.ag(A.br(q,A.N(A.a([A.j(q,15,q),A.aC(p,p,new A.a6P(),r.f,B.q,q,A.I(B.c3,q,q),q,!1,!1,!1,new A.k("searchTextField",m),q,1,!1,q,q,q,q,B.r,B.x),A.aH(A.a([A.e3(p,new A.a6Q(r,o),A.I(B.cn,q,q),new A.k("search",m)),A.e3("Refresh",new A.a6R(r),A.I(B.bL,q,q),new A.k("refresh",m)),A.e3("Add Entry",new A.a6S(r),A.I(B.tb,q,q),new A.k("Addbtn",m))],l),B.i,B.B,B.f,q,q),new A.aJ(new A.a7(10,10,10,10),A.O(r.x,q,q,q,A.ab(q,q,B.z,q,q,q,q,q,q,q,q,q,q,B.aF,q,q,!0,q,q,q,q,q,q,q,q),q,q,q),q)],l),B.i,B.B,B.f),r.e),q,q,q)
 s=r.y?A.ag(A.bb(A.d7(B.Wo,r.gcG()),q,q,q,q,B.J),q,q,q):A.ag(A.bm(q,4,q),q,q,q)
 return A.aZ(!0,A.aS(n,q,A.ce(q,A.a([new A.aY(m,q),new A.cX(B.as,new A.aY(s,q),q)],l)),q,!1,r.d),!0,B.t,!0,!0)},
 cV(){var s,r,q,p,o,n=this
