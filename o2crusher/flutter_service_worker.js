@@ -16,21 +16,25 @@ const RESOURCES = {
 "assets/assets/images/o2bizLogo.png": "34b84eda3966dfe7f8d3e40ddc2fc5ce",
 "assets/FontManifest.json": "549d4f05705b6e948f5154c30a31bf5c",
 "assets/fonts/MaterialIcons-Regular.otf": "7e7a6cccddf6d7b20012a548461d5d81",
-"assets/NOTICES": "9eb3340a63e8bac8e546a3ec4948ecc4",
+"assets/NOTICES": "6be0ca43ee7a0329df383337eebd8d00",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/fluttertoast/assets/toastify.css": "a85675050054f179444bc5ad70ffc635",
 "assets/packages/fluttertoast/assets/toastify.js": "e7006a0a033d834ef9414d48db3be6fc",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "b37ae0f14cbc958316fac4635383b6e8",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
+"canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
+"canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
+"canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
+"canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "favicon.ico": "9c08cb6ac0c3ef75b4ad5931affb3103",
 "icons/Icon-192.png": "986d72640aaab18f1b1dc3d481d0244a",
 "icons/Icon-512.png": "c4ecb54ab43a7362b647c5ee00cddaaa",
-"index.html": "1a514645c094cd35aeed3a35247e38c6",
-"/": "1a514645c094cd35aeed3a35247e38c6",
-"main.dart.js": "e961b99de2aa852cb464a376b52e9b2f",
+"index.html": "b4048bd5c0742f280a4f2f5014186b4a",
+"/": "b4048bd5c0742f280a4f2f5014186b4a",
+"main.dart.js": "8ebf48ae739621c4aaa03c4ab5b0d420",
 "manifest.json": "368ebefc42a091127131e5ea17ee6e5e",
-"version.json": "69525d18eb554f9c253db5bc37c99f84"
+"version.json": "be23d40a0fd84c62d9a8e53e4bd71d0c"
 };
 
 // The application shell files that are downloaded before a service worker can
