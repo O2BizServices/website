@@ -69,7 +69,6 @@
           } 
         }
       };
-	console.log(config);
       if(window.Paytm && window.Paytm.CheckoutJS){
           window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
               window.Paytm.CheckoutJS.init(config).then(function onSuccess() {
