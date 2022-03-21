@@ -62,6 +62,10 @@
             console.log("notifyMerchant handler function called");
             console.log("eventName => ",eventName);
             console.log("data => ",data);
+			if(eventName == 'APP_CLOSED'){
+				alert("Operation cancel by user. So closing current Tab.");
+				window.close();
+			}
           } 
         }
       };
