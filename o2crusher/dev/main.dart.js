@@ -92127,7 +92127,7 @@ p.r.sab(0,q)
 q=r.h(s,"address")
 if(q==null)q=""
 p.x.sab(0,q)
-q=r.h(s,"location")
+q=r.h(s,"city")
 if(q==null)q=""
 p.y.sab(0,q)
 q=r.h(s,"phone")
@@ -92147,7 +92147,7 @@ CE(){var s,r,q,p=this
 if(p.d.gN().az()){p.k(new A.b12(p))
 s=A.T()+"/"+$.Q+"/MOBILE/party-update-gstin-info"
 r=t.N
-q=A.ae(["id",p.a.c,"address",p.x.a.a,"email",p.Q.a.a,"GSTIN",p.f.a.a,"legal_name",p.r.a.a,"location",p.y.a.a,"phone",p.z.a.a,"pincode",p.ch.a.a,"state",p.db],r,r)
+q=A.ae(["id",p.a.c,"address",p.x.a.a,"email",p.Q.a.a,"GSTIN",p.f.a.a,"legal_name",p.r.a.a,"city",p.y.a.a,"phone",p.z.a.a,"pincode",p.ch.a.a,"state",p.db],r,r)
 r=p.c
 r.toString
 A.ag(s,q,r).w(0,new A.b13(p),t.P).W(new A.b14(p))}}}
