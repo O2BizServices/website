@@ -99331,7 +99331,7 @@ CE(){var s,r,q,p=this,o="companyLogo",n="enableinv"
 if(p.d.gN().az()){p.k(new A.b1_(p))
 s=A.T()+"/"+$.Q+"/MOBILE/update-owner-gstin"
 r=t.N
-q=A.ae(["GSTIN",p.f.a.a,"legal_name",p.y.a.a,"address",p.z.a.a,"city",p.Q.a.a,"state",p.id,"pincode",p.cy.a.a,"email",p.cx.a.a,"phone",p.ch.a.a,"ifsc",p.dx.a.a,"account",p.db.a.a,"note",p.fr.a.a],r,r)
+q=A.ae(["GSTIN",p.f.a.a,"legal_name",p.y.a.a,"address",p.z.a.a,"city",p.Q.a.a,"state",p.id,"pincode",p.cy.a.a,"email",p.cx.a.a,"phone",p.ch.a.a,"ifsc",p.dx.a.a,"account",p.db.a.a,"note",p.fr.a.a,"bankname",p.dy.a.a],r,r)
 r=p.k1
 if(r.h(0,o)!=null){r=J.fq(r.h(0,o))
 q.l(0,"logo",B.an.gcL().bt(r))}if(p.fx){q.l(0,n,"Y")
