@@ -102467,7 +102467,7 @@ return A.aL(!0,A.cc(d,A.aP(b,d,A.aP(d,B.a0,s,d,!1,d,d,d),d,!1,d,d,d),B.E,!1,d,d,
 aqT(){var s=A.Q()+"/"+$.J+"/MOBILE/driver-list",r=this.c
 r.toString
 A.c0(s,r).u(0,new A.anV(this),t.P)},
-ws(){var s=A.Q()+"/"+$.J+"/MOBILE/vehicle-list",r=this.c
+ws(){var s=A.Q()+"/"+$.J+"/MOBILE/vehicle-list?vehicleType=Tipper",r=this.c
 r.toString
 A.c0(s,r).u(0,new A.aoo(this),t.P)},
 fG(){var s=A.Q()+"/"+$.J+"/MOBILE/party-list?category=QUARRY",r=this.c
