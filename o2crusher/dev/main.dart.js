@@ -97378,7 +97378,7 @@ this.a4f()},
 C(a,b){var s,r,q,p,o,n,m,l,k=this,j=null,i="Select Vehicle Type",h=A.b1(b,k.a.c)
 if(J.d3(k.r))s=A.ah(A.b_(j,j,j,j,j,4,j,j),j,j,j)
 else{s=A.e(j,15,j)
-r=A.a([new A.eq(A.bK("[A-Z0-9]",!0),!0,"")],t.Ui)
+r=A.a([new A.eq(A.bK("[a-zA-Z0-9]",!0),!0,"")],t.Ui)
 q=t.O
 p=A.a7("Vehicle No.","Enter Vehicle No",new A.aPz(),k.d,B.qQ,j,A.r(B.c5,j,j),r,!1,!1,!1,new A.h("vehicleTextField",q),j,1,!1,j,j,j,j,B.n,B.t)
 o=k.r
