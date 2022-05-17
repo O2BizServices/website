@@ -371,6 +371,10 @@ $('#btnUFSubmit').click(function (event) {
 		alert("Please Enter Password");
 		return false;
 	}
+	if($("#txtPassword").val().length <= 4){
+		alert("Password must be minimum 5 characters");
+		return false;
+	}
 	if($("#txtEmail").val() != ""){
 		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 		if( !emailReg.test( $("#txtEmail").val() ) ) {
