@@ -107511,16 +107511,19 @@ e=A.b6(l.ay,e,"Unit(Optional)",e,A.o(B.az,k,k),new A.aqb(l),"Select Unit",B.y,"U
 o=l.at
 n=t.p
 o=A.aX(B.b7,A.L(A.a([s,r,q,p,e,A.b6(l.ch,o,"Plant(Optional)",o,A.o(B.az,k,k),new A.aqd(l),"Select Plant",B.y,"Plant",new A.aqe(),new A.d("Plant",h)),A.e(k,15,k),A.ap("Search",new A.aqf(l),l.fx,k,new A.d("btn",h)),A.e(k,10,k)],n),B.i,B.z,B.j),l.d)
-if(l.cy){e=l.CW
-s=l.id
-r=t.KL
-m=new A.QK(A.a([],r),A.a([],r),A.a([],r),A.a([],r),A.a([],t.eQ),0,new A.bu(A.a([],t.ei),t.ua),new A.bu(A.a([],t.s_),t.zN),$.a7())
-m.dy=e
+if(l.cy){e=l.c
+e.toString
+s=l.CW
+r=l.id
+q=t.KL
+m=new A.QK(A.a([],q),A.a([],q),A.a([],q),A.a([],q),A.a([],t.eQ),0,new A.bu(A.a([],t.ei),t.ua),new A.bu(A.a([],t.s_),t.zN),$.a7())
+m.dy=s
 m.fr=l.k2
 m.fx=!0
 m.aEE()
-e=A.bHe(k,B.y,B.tr)
-e=A.aA(new A.ay(B.PF,A.aw(k,A.bHd(new A.Ib(A.bWV(l.cx),m,B.lu,B.dI,B.dI,B.bW,k,s,k,!0,!0,new A.mi(k),!0,!0,100,k),e),B.p,k,k,k,k,k,k,k,k,k,k,k),k),k,new A.d("tableScroll",h),k,k,k,B.J)}else e=B.dw
+e=e.L(t.m).f
+s=A.bHe(k,B.y,B.tr)
+e=A.aA(new A.ay(B.PF,A.aw(k,A.bHd(new A.Ib(A.bWV(l.cx),m,B.lu,B.dI,B.dI,B.bW,k,r,k,!0,!0,new A.mi(k),!0,!0,100,k),s),B.p,k,k,k,k,k,k,k,k,k,k,e.a.a*0.9),k),k,new A.d("tableScroll",h),k,k,k,B.J)}else e=B.dw
 n=A.cz(k,A.a([new A.bb(new A.bR(B.ab,k,k,o,k),k),new A.bb(A.L(A.a([e,A.e(k,70,k)],n),B.i,B.l,B.j),k)],n))
 e=n}else e=A.aa(A.aK(k,k,k,k,k,4,k,k),k,k,k)
 return A.aE(!0,A.aG(g,k,e,k,!1,f,B.L7,new A.d("scroll",h)),!0,B.x,!0,!0)},
@@ -111788,15 +111791,16 @@ q=o.a.c
 p=o.c
 p.toString
 A.c5(s+"/"+r+"_"+q+"/cat-list",p).A(0,new A.bqg(o),t.P).H(new A.bqh(o))},
-qB(){var s,r,q,p,o=this
-o.i(new A.bql(o))
+qB(){var s,r,q,p,o,n=this
+n.i(new A.bql(n))
 s=A.ba()
 r=$.F
-q=t.z
-p=A.R(["limit",""],q,q)
-q=o.c
-q.toString
-A.T(s+"/"+r+"/get-all-stock",p,q).A(0,new A.bqm(o),t.P).H(new A.bqn(o))},
+q=n.a.c
+p=t.z
+o=A.R(["limit",""],p,p)
+p=n.c
+p.toString
+A.T(s+"/"+r+"_"+q+"/get-all-stock",o,p).A(0,new A.bqm(n),t.P).H(new A.bqn(n))},
 b9(){var s,r,q,p,o,n=this,m="categoryID"
 n.i(new A.bqr(n))
 s=A.ba()
