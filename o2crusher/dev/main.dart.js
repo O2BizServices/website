@@ -107523,7 +107523,7 @@ m.fx=!0
 m.aEE()
 e=e.L(t.m).f
 s=A.bHe(k,B.y,B.tr)
-e=A.aA(new A.ay(B.PF,A.aw(k,A.bHd(new A.Ib(A.bWV(l.cx),m,B.lu,B.dI,B.dI,B.bW,k,r,k,!0,!0,new A.mi(k),!0,!0,100,k),s),B.p,k,k,k,k,k,k,k,k,k,k,e.a.a*0.9),k),k,new A.d("tableScroll",h),k,k,k,B.J)}else e=B.dw
+e=A.aA(new A.ay(B.PF,A.aw(k,A.bHd(new A.Ib(A.bWV(l.cx),m,B.lu,B.dI,B.dI,B.bW,k,r,k,!0,!0,new A.mi(k),!0,!0,100,k),s),B.p,k,k,k,k,k,k,k,k,k,k,e.a.a*0.98),k),k,new A.d("tableScroll",h),k,k,k,B.J)}else e=B.dw
 n=A.cz(k,A.a([new A.bb(new A.bR(B.ab,k,k,o,k),k),new A.bb(A.L(A.a([e,A.e(k,70,k)],n),B.i,B.l,B.j),k)],n))
 e=n}else e=A.aa(A.aK(k,k,k,k,k,4,k,k),k,k,k)
 return A.aE(!0,A.aG(g,k,e,k,!1,f,B.L7,new A.d("scroll",h)),!0,B.x,!0,!0)},
@@ -115062,32 +115062,32 @@ s.W()
 s.EY()
 s.yX()
 s.EH()},
-C(b0,b1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this,b=null,a="searchTextField",a0="Supplier",a1="Subtotal",a2="Search",a3=t.O,a4=A.aM(b1,c.a.c),a5=A.e(b,15,b),a6=A.d4("Date","Select Date","Required",c.e,!0,new A.d("FromDate",a3),b,b,b,b),a7=A.a0("Search Item","Enter Item Name",new A.aXQ(c),c.z,B.o,b,A.o(B.a9,b,b),b,!1,!1,!1,new A.d(a,a3),b,1,!1,new A.aXR(c),b,b,b,B.ar,B.r),a8=A.L(c.cy,B.i,B.l,B.j),a9=c.db
-if(a9==null)a9=A.e(b,b,b)
+C(a9,b0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this,b=null,a="Supplier",a0="Subtotal",a1="Search",a2=t.O,a3=A.aM(b0,c.a.c),a4=A.e(b,15,b),a5=A.d4("Date","Select Date","Required",c.e,!0,new A.d("FromDate",a2),b,b,b,b),a6=A.a0("Search Item","Enter Item Name",new A.aXQ(c),c.z,B.o,b,A.o(B.a9,b,b),b,!1,!1,!1,new A.d("searchItem",a2),b,1,!1,new A.aXR(c),b,b,b,B.ar,B.r),a7=A.L(c.cy,B.i,B.l,B.j),a8=c.db
+if(a8==null)a8=A.e(b,b,b)
 s=A.fO(!0)
-s=A.a0("Quantity recieved","Enter Quantity recieved",new A.aXS(),c.f,B.o,b,A.o(B.S,b,b),s,!1,!1,!1,new A.d("quantity",a3),b,1,!1,b,b,b,b,B.n,B.N)
+s=A.a0("Quantity recieved","Enter Quantity recieved",new A.aXS(),c.f,B.o,b,A.o(B.S,b,b),s,!1,!1,!1,new A.d("quantity",a2),b,1,!1,b,b,b,b,B.n,B.N)
 r=c.CW
-r=A.b6(c.cx,r,a0,r,A.o(B.S,b,b),new A.aXY(c),"Select Supplier",B.y,a0,new A.aXZ(),new A.d(a0,a3))
-q=A.a0("Order/Bill No.","Enter Order/Bill No.",new A.aY_(),c.r,B.o,b,A.o(B.S,b,b),b,!1,!1,!1,new A.d("order",a3),b,1,!1,b,b,b,b,B.n,B.r)
+r=A.b6(c.cx,r,a,r,A.o(B.S,b,b),new A.aXY(c),"Select Supplier",B.y,a,new A.aXZ(),new A.d(a,a2))
+q=A.a0("Order/Bill No.","Enter Order/Bill No.",new A.aY_(),c.r,B.o,b,A.o(B.S,b,b),b,!1,!1,!1,new A.d("order",a2),b,1,!1,b,b,b,b,B.n,B.r)
 p=A.fO(!1)
 o=A.o(B.S,b,b)
 n=A.a([new A.dm(A.bt("[0-9]",!0),!0,"")],t.b)
-p=A.dz("",a1,a1,new A.aY0(),c.w,b,o,p,!1,new A.d("subTotal",a3),b,1,new A.aY1(c),b,B.N,new A.cE(1,B.a8,A.a0("GST %.","GST %",new A.aY2(),c.x,B.o,b,A.o(B.S,b,b),n,!1,!1,!1,new A.d("gst",a3),b,1,!1,new A.aY3(c),b,b,b,B.n,B.N),b))
+p=A.dz("",a0,a0,new A.aY0(),c.w,b,o,p,!1,new A.d("subTotal",a2),b,1,new A.aY1(c),b,B.N,new A.cE(1,B.a8,A.a0("GST %.","GST %",new A.aY2(),c.x,B.o,b,A.o(B.S,b,b),n,!1,!1,!1,new A.d("gst",a2),b,1,!1,new A.aY3(c),b,b,b,B.n,B.N),b))
 o=c.fr
 m=c.c
 m.toString
 l=t.p
-m=A.ev(b1,"Supporting document[optional]",new A.aY4(c),new A.aXT(c),A.e4(c.fx,o,m,A.a([],l),!0,b))
+m=A.ev(b0,"Supporting document[optional]",new A.aY4(c),new A.aXT(c),A.e4(c.fx,o,m,A.a([],l),!0,b))
 o=A.e(b,10,b)
 k=A.O(c.dy,b,b,b,A.Y(b,b,b,b,b,b,b,b,b,b,b,b,b,B.D,b,b,!0,b,b,b,b,b,b,b,b),b,b,b)
-j=A.ap("Make Inward Entry",new A.aXU(c),c.ax,b,new A.d("btn",a3))
+j=A.ap("Make Inward Entry",new A.aXU(c),c.ax,b,new A.d("btn",a2))
 i=A.e(b,30,b)
-h=A.a0(a2,a2,new A.aXV(),c.Q,B.o,b,A.o(B.a9,b,b),b,!1,!1,!1,new A.d(a,a3),b,1,!1,b,b,b,b,B.ar,B.r)
-g=c.ch?A.aa(A.aK(b,b,b,b,b,4,b,b),b,b,b):A.az(A.a([A.ap(a2,new A.aXW(c),!1,b,new A.d("searchBtn",a3)),A.e(b,b,30),A.ap("Refresh",new A.aXX(c),!1,b,new A.d("refreshBtn",a3))],l),B.i,B.z,B.j,b,b)
+h=A.a0(a1,a1,new A.aXV(),c.Q,B.o,b,A.o(B.a9,b,b),b,!1,!1,!1,new A.d("searchTextField",a2),b,1,!1,b,b,b,b,B.ar,B.r)
+g=c.ch?A.aa(A.aK(b,b,b,b,b,4,b,b),b,b,b):A.az(A.a([A.ap(a1,new A.aXW(c),!1,b,new A.d("searchBtn",a2)),A.e(b,b,30),A.ap("Refresh",new A.aXX(c),!1,b,new A.d("refreshBtn",a2))],l),B.i,B.z,B.j,b,b)
 f=A.e(b,10,b)
 e=A.O("Showing latest 50 records",b,b,b,A.Y(b,b,B.a1,b,b,b,b,b,b,b,b,b,b,B.D,b,b,!0,b,b,b,b,b,b,b,b),b,b,b)
-d=c.ay?new A.ay(B.aH,A.aA(A.cn(A.a(["DateTime","Item code","Item","Qty","Order/Bill No","supplier","subTotal","GST%","total"],t.s),c.gtB()),b,new A.d("tableScroll",a3),b,b,b,B.J),b):A.aK(b,b,b,b,b,4,b,b)
-return A.aE(!0,A.aG(a4,b,A.aA(new A.bR(B.ab,b,b,A.aX(b,A.L(A.a([a5,a6,a7,new A.ay(B.iz,a8,b),a9,s,r,q,p,m,o,k,j,i,h,g,f,e,d],l),B.i,B.l,B.j),c.d),b),b,b,b,b,b,B.A),b,!1,b,b,new A.d("scroll",a3)),!0,B.x,!0,!0)},
+d=c.ay?new A.ay(B.aH,A.aA(A.cn(A.a(["DateTime","Item code","Item","Qty","Order/Bill No","supplier","subTotal","GST%","total"],t.s),c.gtB()),b,new A.d("tableScroll",a2),b,b,b,B.J),b):A.aK(b,b,b,b,b,4,b,b)
+return A.aE(!0,A.aG(a3,b,A.aA(new A.bR(B.ab,b,b,A.aX(b,A.L(A.a([a4,a5,a6,new A.ay(B.iz,a7,b),a8,s,r,q,p,m,o,k,j,i,h,g,f,e,d],l),B.i,B.l,B.j),c.d),b),b,b,b,b,b,B.A),b,!1,b,b,new A.d("scroll",a2)),!0,B.x,!0,!0)},
 wf(){var s={}
 s.a=s.b=0
 this.i(new A.aY5(s,this))},
@@ -115488,7 +115488,7 @@ s.EG()
 s.z3()
 s.EH()},
 C(a1,a2){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=null,e="Search",d=t.O,c=A.aM(a2,g.a.c),b=A.e(f,15,f),a=A.d4("Date","Select Date","Required",g.e,!0,new A.d("FromDate",d),f,f,f,f),a0=g.at
-a0=A.b6(g.ay,a0,"Job",a0,A.o(B.S,f,f),new A.b_T(g),"Select Job",B.y,"Job",new A.b_U(),new A.d("Job",d))
+a0=A.b6(g.ay,a0,"Job",a0,A.o(B.S,f,f),new A.b_T(g),"Select Job",B.y,"Job",new A.b_U(),new A.d("job",d))
 s=A.a0("Search Item","Enter Item Name",new A.b_V(g),g.r,B.o,f,A.o(B.a9,f,f),f,!1,!1,!1,new A.d("searchItem",d),f,1,!1,new A.b_W(g),f,f,f,B.ar,B.r)
 r=A.L(g.ch,B.i,B.l,B.j)
 q=g.CW
